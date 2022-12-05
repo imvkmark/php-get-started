@@ -1,0 +1,19 @@
+{
+    "autoload": {
+        "classmap": [
+        ],
+        "psr-4": {
+            "Php\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+        ],
+        "psr-4": {
+            "Tests\\": "tests"
+        }
+    },
+    "require": {
+        "bramus/router": "^1.6"
+    }
+}
