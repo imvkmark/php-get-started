@@ -2,7 +2,7 @@
 
 namespace Tests\VariableType;
 
-use Php\Classes\CaseClass;
+use Php\CaseClass;
 use PHPUnit\Framework\TestCase;
 
 class ObjectTest extends TestCase

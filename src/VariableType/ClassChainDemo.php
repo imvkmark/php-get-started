@@ -1,6 +1,6 @@
 <?php
 
-namespace Php\Classes\VariableType;
+namespace Php\VariableType;
 
 class ClassChainDemo
 {

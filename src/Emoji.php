@@ -1,6 +1,6 @@
 <?php
 
-namespace Php\Classes;
+namespace Php;
 
 
 class Emoji

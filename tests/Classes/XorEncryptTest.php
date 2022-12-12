@@ -2,8 +2,8 @@
 
 namespace Tests\Classes;
 
+use Php\XorEncrypt;
 use PHPUnit\Framework\TestCase;
-use src\Classes\XorEncrypt;
 
 class XorEncryptTest extends TestCase
 {

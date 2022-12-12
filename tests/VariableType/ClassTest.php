@@ -3,7 +3,7 @@
 namespace Tests\VariableType;
 
 
-use Php\Classes\VariableType\ClassChainDemo;
+use Php\VariableType\ClassChainDemo;
 use PHPUnit\Framework\TestCase;
 
 class ClassTest extends TestCase
