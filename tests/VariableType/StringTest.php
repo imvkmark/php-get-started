@@ -2,8 +2,8 @@
 
 namespace Tests\VariableType;
 
+use Php\Classes\Emoji;
 use PHPUnit\Framework\TestCase;
-use src\Classes\Emoji;
 
 class StringTest extends TestCase
 {

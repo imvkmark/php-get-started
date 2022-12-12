@@ -5,7 +5,6 @@ namespace Tests\Nesbot;
 
 use Carbon\Carbon;
 use PHPUnit\Framework\TestCase;
-use function Core\Tests\Nesbot\dump;
 
 class CarbonTest extends TestCase
 {
@@ -69,6 +68,6 @@ class CarbonTest extends TestCase
     {
         $carbon = Carbon::createFromFormat('Y-m-d', '2021-01-04');
         $w      = $carbon->format('W');
-        dump($w);
+        var_dump($w);
     }
 }

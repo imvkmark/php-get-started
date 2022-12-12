@@ -2,8 +2,8 @@
 
 namespace Tests\VariableType;
 
+use Php\Classes\CaseClass;
 use PHPUnit\Framework\TestCase;
-use src\Classes\CaseClass;
 
 class ObjectTest extends TestCase
 {
