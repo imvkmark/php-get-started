@@ -8,7 +8,7 @@ namespace Php\Http;
 class OutputControlController
 {
     /**
-     * 刷新
+     * 输出控制->实时输出
      * @return mixed
      */
     public function obFlush()
@@ -24,6 +24,34 @@ class OutputControlController
             flush(); // 把缓存推送到浏览器去
             sleep(1);
         }
+    }
+
+    /**
+     * 输出控制->绝对刷送
+     * @return mixed
+     */
+    public function obImplicitFlush()
+    {
+        ob_implicit_flush();
+        ob_end_flush();
+        $i = 0;
+        while (true) {
+            echo 'Now Index is :' . $i++ . '<br>';
+            sleep(1);
+        }
+    }
+
+    /**
+     * 输出控制->列出输出处理程序
+     */
+    public function obListHandlers()
+    {
+
+        ob_start("ob_gzhandler");
+        echo '<code style="white-space: pre-wrap">';
+        var_dump(ob_list_handlers());
+        echo '</code>';
+        ob_end_flush();
     }
 
 }
