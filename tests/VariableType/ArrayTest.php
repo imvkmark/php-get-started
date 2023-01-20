@@ -29,10 +29,12 @@ class ArrayTest extends TestCase
         $diffKeys  = array_diff($updateKey, $formerKey);
         $this->assertEquals('password', reset($diffKeys));
 
-        $total      = [1, 3, 5, 7, 9, 10];
-        $append     = [1, 4, 5, 7, 11];
-        $appendDiff = array_diff($append, $total);
+        $total       = [1, 3, 5, 7, 9, 10];
+        $append      = [1, 4, 5, 7, 11];
+        $appendDiff  = array_diff($append, $total);
+        $appendDiff2 = array_diff($total, $append);
         $this->assertCount(2, $appendDiff);
+        $this->assertCount(3, $appendDiff2);
     }
 
     public function testDiffKey()

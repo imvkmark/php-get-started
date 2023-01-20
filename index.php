@@ -9,7 +9,8 @@ use Bramus\Router\Router;
 $router = new Router();
 
 // Define routes
-$router->get('output-control/ob-flush', '\Php\Http\Request\Web\OutputControlController@obFlush');
+$router->get('/', '\Php\Http\IndexController@index');
+$router->get('output-control/ob-flush', '\Php\Http\OutputControlController@obFlush');
 
 // Run it!
 $router->run();
