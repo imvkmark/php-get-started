@@ -24,7 +24,7 @@ if ($finder->hasResults()) {
             $prefix  = Str::kebab(Str::before($file->getBasename('.php'), 'Controller'));
             foreach ($methods as $method) {
                 $path = $prefix . '/' . Str::kebab($method->getName());
-                call_user_func_array([$router, 'get'], [$path, $classname.'@'.$method->getName()]);
+                $router->get($path, $classname . '@' . $method->getName());
             }
         } catch (ReflectionException $e) {
             echo $e->getMessage();

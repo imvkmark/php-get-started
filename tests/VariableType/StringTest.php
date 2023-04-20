@@ -22,12 +22,30 @@ class StringTest extends TestCase
         $this->assertEquals(3, Emoji::length($str3));
     }
 
-    public function testSet()
+    public function testSet(): void
     {
         $str = 'abc';
         $this->assertEquals('b', $str[1]);
 
         $str[1] = 'a';
         $this->assertEquals('aac', $str);
+    }
+
+    public function testExplode(): void
+    {
+        $str = 'abc';
+        [$arg] = explode('|', $str);
+        $this->assertEquals('abc', $arg);
+    }
+
+    /**
+     * 检查 0 在字符串中出现的次数
+     * @return void
+     */
+    public function testCount(): void
+    {
+        $idfa = '9C287922-EE26-4501-94B5-DDE6F83E1475';
+        $item = count_chars($idfa);
+        $this->assertEquals(1, $item[ord('0')] ?? 0);
     }
 }

@@ -7,6 +7,19 @@ use PHPUnit\Framework\TestCase;
 
 class ArrayTest extends TestCase
 {
+
+    public function testMerge(): void
+    {
+        $item1 = [
+            1 => 'Y',
+        ];
+        $item2 = [
+            9 => 'N',
+        ];
+
+        $this->assertArrayNotHasKey(9, array_merge($item1, $item2));
+    }
+
     /**
      * 文字长度处理
      */
@@ -18,7 +31,7 @@ class ArrayTest extends TestCase
         $this->assertIsNotArray(reset($arr));
     }
 
-    public function testDiff()
+    public function testDiff(): void
     {
         $formerKey = array_keys([
             'hot_num' => 4,
@@ -37,7 +50,7 @@ class ArrayTest extends TestCase
         $this->assertCount(3, $appendDiff2);
     }
 
-    public function testDiffKey()
+    public function testDiffKey(): void
     {
         $diffs = array_diff_key([
             'password' => '2333',
@@ -50,7 +63,7 @@ class ArrayTest extends TestCase
     /**
      * flip 之后保留哪个
      */
-    public function testFlip()
+    public function testFlip(): void
     {
         $arr = [
             'a' => '1',
@@ -63,7 +76,7 @@ class ArrayTest extends TestCase
     /**
      * 向数组头部追加数据
      */
-    public function testUnshift()
+    public function testUnshift(): void
     {
         $items = [
             'fun' => 'fun-v',
@@ -74,7 +87,7 @@ class ArrayTest extends TestCase
         $this->assertCount(2, $items);
     }
 
-    public function testPlus()
+    public function testPlus(): void
     {
         $arrayA = [
             'a' => -1,
@@ -90,7 +103,7 @@ class ArrayTest extends TestCase
     }
 
 
-    public function testIsset()
+    public function testIsset(): void
     {
         $af = $d['a']['f'] ?? 'none';
         $this->assertEquals('none', $af, 'Isset Check');
@@ -103,11 +116,17 @@ class ArrayTest extends TestCase
     }
 
 
-    public function testPush()
+    public function testPush(): void
     {
-        $arr = [];
-        array_push($arr, 1);
+        $arr   = [];
+        $arr[] = 1;
         $this->assertEquals([1], $arr);
+    }
+
+    public function testChunk(): void
+    {
+        $items = array_chunk([1, 2, 3, 4], 3);
+        $this->assertCount(1, $items[1]);
     }
 
 
@@ -115,7 +134,7 @@ class ArrayTest extends TestCase
      * 数组中的数据
      * @return void
      */
-    public function testIntersect()
+    public function testIntersect(): void
     {
         $arr = [
             [1, 2, 3, 4],
@@ -123,14 +142,14 @@ class ArrayTest extends TestCase
             [1, 8],
             [1, 0, 9],
         ];
-        $res = call_user_func_array('array_intersect', $arr);
+        $res = array_intersect(...$arr);
         $this->assertEquals(1, $res[0]);
     }
 
     /**
      * 数组迭代减少, 使用回调函数
      */
-    public function testReduce()
+    public function testReduce(): void
     {
         $extensions = [
             'excel' => ['xlsx', 'xlsb', 'xls', 'xlsm'],
@@ -146,13 +165,13 @@ class ArrayTest extends TestCase
     }
 
 
-    public function testEnd()
+    public function testEnd(): void
     {
         $ends = ['a', 'b', 'c'];
         $this->assertEquals('c', end($ends));
     }
 
-    public function testPushAndPop()
+    public function testPushAndPop(): void
     {
         $stack = [];
         $this->assertCount(0, $stack);
